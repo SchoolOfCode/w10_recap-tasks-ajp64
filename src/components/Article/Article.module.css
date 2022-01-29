@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+.article {
+  background-color: white;
+  margin-left: 25px;
+  width: 75%;
+}
+
+.title {
+  font-family: "Staatliches", cursive;
+  margin-left: 25px;
+}
