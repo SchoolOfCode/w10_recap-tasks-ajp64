@@ -2,12 +2,15 @@ import css from "./App.module.css";
 import { MainHeader } from "../Header";
 import { PidgeonArticle } from "../Article";
 import { Layout } from "antd";
+import LogoutButton from "../LogoutButton";
+import Profile from "../Profile";
 import "antd/dist/antd.css";
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 function App() {
   return (
     <Layout className={css.container}>
+      <Profile />
       <Header>
         <MainHeader />
       </Header>
@@ -17,6 +20,7 @@ function App() {
           <PidgeonArticle />
         </Content>
       </Layout>
+      <LogoutButton />
     </Layout>
   );
 }
