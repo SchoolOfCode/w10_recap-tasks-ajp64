@@ -3,10 +3,11 @@ import { Comments } from "../Comments";
 import { LikeButton } from "../LikeButton";
 import css from "./Article.module.css";
 import { Typography, Divider, Layout } from "antd";
-const { Title, Paragraph, Text, Link } = Typography;
-const { Header, Footer, Sider, Content } = Layout;
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import Loading from "../Loading";
+const { Title, Paragraph } = Typography;
 
-export function PidgeonArticle() {
+function PidgeonArticle() {
   return (
     <Typography className={css.article}>
       {articles.map((item) => {
@@ -31,3 +32,7 @@ export function PidgeonArticle() {
     </Typography>
   );
 }
+
+export default withAuthenticationRequired(PidgeonArticle, {
+  onRedirecting: () => <Loading />,
+});

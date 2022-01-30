@@ -1,6 +1,6 @@
 import css from "./App.module.css";
 import { MainHeader } from "../Header";
-import { PidgeonArticle } from "../Article";
+import PidgeonArticle from "../Article";
 import { Layout } from "antd";
 import LogoutButton from "../LogoutButton";
 import Profile from "../Profile";
