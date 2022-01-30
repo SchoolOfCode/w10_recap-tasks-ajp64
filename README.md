@@ -1,42 +1,46 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6845753&assignment_repo_type=AssignmentRepo)
-# Weekly Recap Tasks
+# React Pigeon Blog
 
-## Feedback
+This project was designed to practice building a React app and splitting it into structured components, then using CSS modules and components to style it. Auth0 was used to add authentication, and the website was then deployed.
 
-### Peer feedback
+See my website here: https://fervent-feynman-e562e4.netlify.app/
 
-Feedback is a vital part of continual improvement and the hero's journey of growth you're on on this course. We're here to support each other to grow on this bootcamp journey, so keep this in mind when you write honest, constructive feedback. This is important for the receiver of the feedback as well as the giver - learning to give feedback is a skill that you'll use throughout your career in tech.
+## Documentation
 
-Please click [here](https://forms.gle/BJWLNvSgKsp9rkbF8) to fill out the peer review form for your partner this week. Please fill it out for each person you've worked with.
+### Planning
 
-### Coaching feedback
+[React Structure](https://github.com/SchoolOfCode/w10_recap-tasks-ajp64/blob/master/reactplan.dio)
 
-If you didn't complete the coaching feedback survey about your recent 1:1s with your coach earlier in the week, please [click here](https://forms.gle/rwcyW9bTbVqX4nNz6) to do so.
+The first step was planning out the structure of the app. From what was initially provided, the different parts of the app were taken apart and put into components, then reassembled in a more coherent structure.
 
-## Tasks
+### CSS Modules
 
-In this repository, you'll find an app that uses content from the array of posts in [libs/articles](task2/src/libs/articles.js). It's currently all in one component.
+CSS modules were used for some styling. ".module.css" files were created for each component that required it, and these were imported into the "index.js" file for the component and used.
 
-👉 Use component-based thinking to break the code in the `App` component into separate components. Use draw.io's VS Code integration (or an image from another diagramming software) to diagram out your components and their states and props and include your diagram in this repo before refactoring the code.
+### Component Library
 
-👉 Style the components you've just made using **CSS modules**.
+[Ant Design](https://ant.design/) was used as a component library for this app. Multiple components were used including:
 
-👉 Use the **component library** of your choice to replace one or more of the existing components and/or add one or more new components to the application.
+- [Layout](https://ant.design/components/layout/) (Header, Sider, Content)
+- [Typography](https://ant.design/components/typography/) (Title, Paragraph)
+- [Comments and Avatars](https://ant.design/components/comment/)
+- [Buttons](https://ant.design/components/button/)
 
-👉 Use Auth0 to add simple **authentication** to your app so that users must be logged in to view the articles.
+### Auth0
 
-👉 **Deploy** your front end application, and include the URL in the readme.
+[Auth0](https://auth0.com/docs/quickstart/spa/react) was used to require authentication to see the body of the page. Using the react hook functionality, a sign in is prompted when accessing the page. Once logged in, the used is redirected to the main page with the blog information displayed.
 
-👉 Create **documentation** for your app, and refactor this readme with your documentation. You can use a tool like [readme.so](https://readme.so/editor).
+### Deployment
 
-### 🌟 Bonus tasks
+Netlify was used to deploy the React app. The build was made directly from the Github repo. Due to certain warnings coming from the use of the Ant Design, the build command was configured to ignore warnings as errors "CI= npm run build".
 
-If you finish the tasks above and want to keep exploring and practicing, keep coding! Feel free to work on a personal project or explore something you're curious about.
+## Lessons Learned
 
-If you'd like to carry on with this repo, here are some ideas:
+### Structure
 
-- Create additional features for your app.
-- Use **Storybook** to document your UI components.
-- Explore what else you can do with Auth0 to add additional auth to your blog (such as roles).
-- Add test files and tests for your components.
-- Create and deploy a REST API back end to serve your articles.
+I need to continue working on how to sucessfully plan a react app from the start. While trying to structure the components, states and props, I soon realised this would need to change as I build the app. This was mostly around needing to change where states lived, and not needing as many props as I originally thought.
+
+Additionally, once Auth0 was brought in, to get this working as intended I had to introduce new Auth hooks and components to set it up correctly. This forced a change to the structure of the app.
+
+### Auth0
+
+While I was able to achieve the basic objective of requiring login to view the page, it doesn't flow as I would like. Ideally there would be a landing page, from which the user could then login and view the page. I wasn't able to achieve this as I hoped but I did get a better understanding of how Auth can be used with react.

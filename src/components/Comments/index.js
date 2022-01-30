@@ -1,4 +1,4 @@
-import { Comment, Tooltip, Avatar } from "antd";
+import { Comment, Avatar } from "antd";
 
 export function Comments({ comments }) {
   return (
